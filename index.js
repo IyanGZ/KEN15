@@ -3,7 +3,7 @@ const { state, saveState } = useSingleFileAuthState('./session.json')
 const fs = require('fs')
 const pino = require('pino')
 const connectKeWA = () => {
-const adon = makeWASocket({logger:pino({level:'silent'}),printQRInTerminal: true,auth: state,browser: ["AdOnBoTz", "Dekstop", "3.0"]})
+const adon = makeWASocket({logger:pino({level:'silent'}),printQRInTerminal: true,auth: state,browser: ["Ken15-Host", "Dekstop", "3.0"]})
 
 require('./adon.js')
 nocache('./adon.js', module => console.log(`"${module}" Updated!`))
@@ -11,8 +11,8 @@ nocache('./adon.js', module => console.log(`"${module}" Updated!`))
 adon.ev.on('messages.upsert', async denz => {
 if (!denz.messages) return
 msg = denz.messages[0]
-nomorOwner = ['6283137619111'] // genti nomor lu di sini 
-nomorDeveloper = ['6283137619111'] // genti nomor lu di sini
+nomorOwner = ['6285742344873'] // genti nomor lu di sini 
+nomorDeveloper = ['6285742344873'] // genti nomor lu di sini
 adon.sendPresenceUpdate('unavailable')
 require("./adon")(adon, denz, msg)})
 
